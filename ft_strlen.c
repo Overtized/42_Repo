@@ -6,7 +6,7 @@
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:24:03 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/23 13:33:29 by mchanlia         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:28:19 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,4 @@ int ft_strlen(char *str)
         str++;
     }
     return (counter);
-}
-int main(void)
-{
-    char *str = "hello world";
-    printf("%d", ft_strlen(str));
-    return (0);
 }

@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 15:55:18 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/28 14:27:43 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/04/28 14:03:46 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/04/28 14:06:36 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main(void)
+char	*ft_strdup(const char *s)
 {
-   const char str [] = " salut toi salone";
-   int c = 'o';
-    printf("%s", ft_strrchr(str, c));
-    return 0;
+	char	*duplicate;
+	int		i;
+
+	i = 0 ;
+	duplicate = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (duplicate == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		duplicate[i] = s[i];
+		i++;
+	}
+	duplicate[i] = '\0';
+	return (duplicate);
 }

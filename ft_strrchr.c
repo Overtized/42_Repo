@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 15:55:18 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/28 14:27:43 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/04/28 14:10:50 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/04/28 14:35:04 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main(void)
+char *ft_strrchr(const char *s, int c)
 {
-   const char str [] = " salut toi salone";
-   int c = 'o';
-    printf("%s", ft_strrchr(str, c));
-    return 0;
+    int i;
+    int j;
+    int strlen;
+    int cursor;
+    
+    i = 0;
+    j = 0;
+    strlen = ft_strlen(s);
+    
+    while (s[i])
+    {
+        if (s[i] == c)
+            cursor = i;
+        i++;
+    }
+    /*if (i = strlen)
+    {
+        return (NULL);
+    }*/
+    
+ return (&s[cursor]);//s + i - j);
 }
