@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/23 13:24:03 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/04/23 13:33:29 by mchanlia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include<stdio.h>
+int ft_strlen(char *str)
+{
+    int counter;
+    while (*str)
+    {
+        counter++;
+        str++;
+    }
+    return (counter);
+}
+int main(void)
+{
+    char *str = "hello world";
+    printf("%d", ft_strlen(str));
+    return (0);
+}
