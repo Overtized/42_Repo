@@ -12,7 +12,17 @@
 
 #include "libft.h"
 
-void *calloc(size_t nmemb, size_t size)
+void	*calloc(size_t nmemb, size_t size)
 {
-	
+	void			*allocated_mem;
+	unsigned int	i;
+
+	i = 0;
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	allocated_mem = malloc(nmemb * size + 1);
+	if (!(allocated_mem))
+		return (NULL);
+	ft_bzero(allocated_mem, size + 1);
+	return (allocated_mem);
 }

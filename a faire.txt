@@ -1,3 +1,0 @@
-memcmp 
-strnstr
-calloc

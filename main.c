@@ -10,12 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-int main(void)
-{
-   const char str [] = " salut toi salone";
-   int c = 'o';
-    printf("%s", ft_strrchr(str, c));
-    return 0;
-}
+// int main(void)
+// {
+// 	int i;
+// 	char *str;
+// 	char og [] = "salut ";
+// 	i = 0;
+// 	str = malloc(sizeof(char) * ft_strlen(og) +1);
+// 	if (!(str))
+// 		return (0);
+
+// 	while (i < ft_strlen(og))
+// 	{
+// 		str[i] = og[i];
+// 		i++;
+// 	}
+//     printf("%s", str);
+// 	return 0;
+// }

@@ -14,8 +14,8 @@
 
 int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*chars1;
-	char	*chars2;
+	char			*chars1;
+	char			*chars2;
 	unsigned int	i;
 
 	i = 0;
