@@ -11,40 +11,22 @@
 /* ************************************************************************** */
 
 #include <string.h>
-int ft_strlen(char *str)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-    int counter;
-    while (*str)
-    {
-        counter++;
-        str++;
-    }
-    return (counter);
-}
-char *ft_strchr(const char *s, int c)
-{
-    int i;
-    int strlen;
-    i = 0;
-    strlen = ft_strlen(s);
-    
-    while (s[i] != c)
-    {
-        i++;
-    }
-    if (i = strlen)
-    {
-        return (NULL);
-    }
-    
- return (s + i);
-}
-int main(void)
-{
-    char string [15] = "hello world";
-    int tolookfor;
-    tolookfor = 'm';
-    printf("%s \n",ft_strchr(string, tolookfor));
-    printf("%s \n",strchr(string, tolookfor));
-    return 0;
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(s);
+	while (s[i] != c)
+	{
+		i++;
+	}
+	if (i == len)
+	{
+		return (NULL);
+	}
+	return ((char *)(s + i));
 }

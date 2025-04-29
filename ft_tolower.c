@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 97)
-        c += 32;
-    return (c);
-}
-int main(void)
-{
-    printf("%c", ft_tolower(65));
-    return (0);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

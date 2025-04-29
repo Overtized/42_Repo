@@ -10,22 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *str1, char *str2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-    unsigned int i;
-    i = 0;
-    while (str1[i] && str2[i] && i < n)
-    {
-        if (str1[i] != str2[i])
-            return str1[i] - str2[i];
-        i++;   
-    }
-    return (0);
-}
-int main(void)
-{
-    char str1 [] = " Hello";
-    char str2 [] = " Hallo";
-    printf("%d", ft_strncmp(str1, str2, 5));
-    return (0);
+	unsigned int	i;
+
+	i = 0;
+	if (s1 && s2 == NULL)
+		return(0);
+	while ((s1[i] && s2[i]) && (i < n) && (s1[i] == s2[i]))
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

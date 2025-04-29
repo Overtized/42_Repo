@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 12:00:09 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/23 12:48:47 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/04/29 10:32:38 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/04/29 10:32:38 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+#include "libft.h"
+char *	strnstr(const char *big, const char *little, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	// strstr
+	int	i;
+	int	j;
+	
+	i = 0;
+	j = 0;
+	if (little[j] == '\0')
+	{
+		return (big);
+	}
+	while (big[i] != '\0')
+	{
+		while (little[j] == big[i + j] && big [i + j])
+		{
+			j++;
+		}
+		if (little[j] == '\0')
+			return (&big[i]);
+		else
+		{
+			j = 0;
+		}
+		i++;
+	}
 }

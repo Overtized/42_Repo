@@ -11,25 +11,25 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-    size_t i;
-    char temp_array;
-    char *dst_temp;
-    char *src_temp;
-    
-    i = 0;
-    ft_bzero(dest, n);
-    dst_temp = dest;
-    src_temp = src;       
-    while (i < n)
-    {
-       ft_memset(src, src_temp[i],1);
-       temp_array = src_temp[i];
-       dst_temp[i] = temp_array;
-       i++;
-    
-    }
-    return (dest);
+	size_t	i;
+	char	temp_array;
+	char	*dst_temp;
+	char	*src_temp;
+
+	i = 0;
+	ft_bzero(dest, n);
+	dst_temp = dest;
+	src_temp = (char *)src;
+	while (i < n)
+	{
+		ft_memset((char *)src, src_temp[i], 1);
+		temp_array = src_temp[i];
+		dst_temp[i] = temp_array;
+		i++;
+	}
+	return (dest);
 }

@@ -6,18 +6,21 @@
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:24:03 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/28 13:28:19 by mchanlia         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:23:10 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-    int counter;
-    while (*str)
-    {
-        counter++;
-        str++;
-    }
-    return (counter);
+	int	counter;
+
+	counter = 0;
+	while (*s)
+	{
+		counter++;
+		s++;
+	}
+	return (counter);
 }
