@@ -14,19 +14,7 @@
 
 // int main(void)
 // {
-// 	int i;
-// 	char *str;
-// 	char og [] = "salut ";
-// 	i = 0;
-// 	str = malloc(sizeof(char) * ft_strlen(og) +1);
-// 	if (!(str))
-// 		return (0);
-
-// 	while (i < ft_strlen(og))
-// 	{
-// 		str[i] = og[i];
-// 		i++;
-// 	}
-//     printf("%s", str);
-// 	return 0;
+// 	char dest[] = "                    ";
+// 	 const void *src = "salut toi";
+// 	printf("%s", (char *)ft_memcpy(dest, src, 30));
 // }

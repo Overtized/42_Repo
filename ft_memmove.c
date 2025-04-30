@@ -15,21 +15,23 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	temp_array;
-	char	*dst_temp;
-	char	*src_temp;
+	char		*dst_temp;
+	const char	*src_temp = src;
 
-	i = 0;
-	ft_bzero(dest, n);
 	dst_temp = dest;
-	src_temp = (char *)src;
-	while (i < n)
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		ft_memset((char *)src, src_temp[i], 1);
-		temp_array = src_temp[i];
-		dst_temp[i] = temp_array;
-		i++;
+		while ( n > 0)
+		{
+			dst_temp[n - 1] = src_temp[n - 1];
+			n--;
+		}
+	}
+	else 
+	{
+		ft_memcpy(dest, src, n);
 	}
 	return (dest);
 }
