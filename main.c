@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// int main(void)
-// {
-// 	char dest[] = "                    ";
-// 	 const void *src = "salut toi";
-// 	printf("%s", (char *)ft_memcpy(dest, src, 30));
-// }
+int main(void)
+{
+	// char dest[] = "                    ";
+	 const void *src = "salut toi";
+	printf("%s", ft_substr(src, 3, 5));
+}
