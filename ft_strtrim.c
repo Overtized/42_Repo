@@ -10,45 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char * s1trimmed;
-	size_t start;
+	char	*s1trimmed;
+	size_t	start;
 	size_t	end;
-	size_t	len;
 	size_t	i;
 
 	i = 0;
 	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	if (!s1 || !set)
 		return (NULL);
-	while ( s1[start] && ft_strchr(set, s1[start]))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (end > start  && ft_strchr(set, s1[end]))
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	len = end - start + 1;
-	if (start > end)
-    {
-        s1trimmed = malloc(1);
-        if (!s1trimmed)
-            return (NULL);
-        s1trimmed[0] = '\0';
-        return (s1trimmed);
-    }
-	s1trimmed = malloc((sizeof(char) * len) + 1);
+	s1trimmed = malloc((sizeof(char) * (end - start) + 1));
 	if (!s1trimmed)
 		return (NULL);
-	while (i < len)
-	{
+	while (start < end)
 		s1trimmed[i++] = s1[start++];
-	}
 	s1trimmed[i] = '\0';
-	return(s1trimmed);
-
-	//  a refaire avec strlcpy et supprimer len pour revenir a 25 lignes ( lignes inutiles et optimisables)
-
-
-
+	return (s1trimmed);
+}
