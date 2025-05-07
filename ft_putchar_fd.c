@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 12:16:16 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/06 12:16:16 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/07 11:20:30 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/07 11:20:30 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-	size_t			len;
-	char			*string;
-
-	if (!s || !f)
-		return (NULL);
-	i = 0;
-	len = ft_strlen(s);
-	string = ft_calloc(len + 1, sizeof(char));
-	if (!string)
-		return (NULL);
-	while (s[i])
-	{
-		string[i] = f(i, s[i]);
-		i++;
-	}
-	return (string);
+	write(fd, &c, 1);
 }

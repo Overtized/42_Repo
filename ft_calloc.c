@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*allocated_mem;
+	void	*allocated_mem;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));

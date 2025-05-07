@@ -100,7 +100,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (!*s)
 	{
-		tabs = ft_calloc(sizeof(char *), 1);
+		tabs = ft_calloc(1, sizeof(char *));
 		if (!tabs)
 			return (NULL);
 		tabs[0] = NULL;
@@ -117,28 +117,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tabs);
 }
-// int main(void)
-// {
-// 	// char *s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
-// 	// char **res = ft_split("ok", 'z');
-
-// 	// for (int i = 0; res[i]; i++)
-// 	// {
-// 	// 	printf("[%s]\n", res[i]);
-// 	// 	free(res[i]);
-// 	// }
-// 	// free(res);
-// // 	if (!(res = ft_split("", 'z')))
-// // 	printf("NULL");
-// // else
-// // 	if (!res[0])
-// // 		printf("ok\n");
-// 	return 0;
-// }
-/* en gros je commence par compter le nombre de mot
-ensuite je dois allouer la memoire du tableau de strings
-ensuite je calcule la longueur de chaque mot 
-puis je malloc chaque strings en protegeant e tfree tout mes mallocs si il y a une erreur
-ensuite je fais une copie dans chaque strings
-*/
-// len boucle while qui assigne et refresh a chaque iteration
