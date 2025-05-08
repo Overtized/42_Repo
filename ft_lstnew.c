@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 15:15:10 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/23 15:24:21 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/08 10:24:04 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/08 10:24:04 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	if (n > ft_strlen(s1))
-		n = ft_strlen(s1) + 1;
-	if (n > ft_strlen(s2))
-		n = ft_strlen(s2) + 1;
-	return (memcmp(s1, s2, n));
+	t_list	*lst;
+
+	lst = ft_calloc(1, sizeof(t_list));
+	if (!lst)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

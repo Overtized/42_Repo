@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 15:15:10 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/23 15:24:21 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/08 15:39:23 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/08 15:39:23 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (n > ft_strlen(s1))
-		n = ft_strlen(s1) + 1;
-	if (n > ft_strlen(s2))
-		n = ft_strlen(s2) + 1;
-	return (memcmp(s1, s2, n));
+	t_list	*lstcp;
+
+	if (!lst || !f)
+		return ;
+	lstcp = lst;
+	while (lstcp)
+	{
+		f(lstcp->content);
+		lstcp = lstcp->next;
+	}
 }

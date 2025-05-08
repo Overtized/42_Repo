@@ -23,9 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	cursor = -1;
 	ch = c % 256;
-	if(ch == '\0')
+	if (ch == '\0')
 	{
-		return((char *)&s[len]);
+		return ((char *)&s[len]);
 	}
 	while (s[i])
 	{

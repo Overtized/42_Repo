@@ -14,25 +14,23 @@
 
 size_t	ft_countword(char const *s, char c)
 {
-	size_t	tokens;
-	size_t	i;
+	size_t	count;
+	int		in_word;
 
-	i = 0;
-	tokens = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
+	count = 0;
+	in_word = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s != c && in_word == 0)
 		{
-			while (s[i] == c)
-				i++;
-			if (s[i])
-				tokens++;
+			in_word = 1;
+			count++;
 		}
-		i++;
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
-	return (tokens + 1);
+	return (count);
 }
 
 int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
@@ -107,13 +105,10 @@ char	**ft_split(char const *s, char c)
 		return (tabs);
 	}
 	token = ft_countword(s, c);
-	tabs = ft_calloc(sizeof(char *), token + 1);
+	tabs = ft_calloc(token + 1, sizeof(char *));
 	if (!tabs)
 		return (NULL);
 	if (tabfill(tabs, s, c))
-	{
-		free(tabs);
 		return (NULL);
-	}
 	return (tabs);
 }

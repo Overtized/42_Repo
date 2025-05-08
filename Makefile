@@ -39,6 +39,8 @@ SOURCES = ft_atoi.c \
 		
 Objects = $(SOURCES:.c=.o)
 
+ObjectsBonus = $(SourcesBonus:.c=.o)
+
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -47,13 +49,26 @@ AR = ar rcs
 
 RM = rm -f
 
+SourcesBonus =	ft_lstadd_back.c \
+				ft_lstadd_front.c \
+				ft_lstclear.c \
+				ft_lstdelone.c \
+				ft_lstiter.c \
+				ft_lstlast.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
+				ft_lstmap.c \
+
 all: $(NAME)
 
-$(NAME): $(Objects)
-	$(AR) $(NAME) $(Objects)
+$(NAME): $(Objects) 
+	$(AR) $(NAME) $(Objects) 
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(ObjectsBonus)
+	$(AR) $(NAME) $(ObjectsBonus)
 
 clean: 
 	$(RM) $(Objects)	

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 15:15:10 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/04/23 15:24:21 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/08 11:59:32 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/08 11:59:32 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (n > ft_strlen(s1))
-		n = ft_strlen(s1) + 1;
-	if (n > ft_strlen(s2))
-		n = ft_strlen(s2) + 1;
-	return (memcmp(s1, s2, n));
+	t_list	*last;
+
+	if (lst == NULL)
+		return (NULL);
+	last = lst;
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	return (last);
 }
