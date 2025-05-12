@@ -1,46 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ftputchar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/10 09:05:36 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/10 09:05:36 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/11 13:41:02 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/11 13:41:02 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "printf.h"
-#include <stdarg.h>
 
-int ft_printf(const char * format, ...)
+void ft_putchar(char c)
 {
-	va_list ap;
-
-	va_start(ap, format);
-	int i;
-	size_t len;
-
-	i = 0;
-	len = 0;
-	while(format[i])
-	{
-		if(format[i] == '%')
-		{
-			i++;
-			len += ft_check_format(format[i]);
-		}
-		else
-		{
-			i++;
-			len ++;
-			ft_putchar(format[i]);
-		}
-	}
-	return(len);
-}
-
-int main(void){
-	printf("%s\n salut %d\n bonjour", "hello", 2);
+	write(1, &c, 1);
 }

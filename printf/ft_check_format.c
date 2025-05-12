@@ -13,15 +13,35 @@
 #include "libft.h"
 #include <printf.h>
 
-char *ft_check_format(const char *format)
+int ft_check_format(const char *format)
 {
-	char * type_format;
 	size_t len;
+	size_t i;
 
-	len = ft_strlen(format);
-	type_format = calloc(sizeof(char), len + 1);
-	if (!type_format)
-		return (NULL);
-	
-	return (type_format);
+	len = 0;
+	i = 0;
+	while(format[i])
+	{
+		i++;
+			if (format[i] == 'c')
+				len += ft_check_format_c(format);
+			else if (format[i] == 's')
+				len += ft_check_format_s(format);
+			else if (format[i] == 'p')
+				len += ft_check_format_p(format);
+			else if (format[i] == 'd' || format[i] == 'i')
+				len += ft_check_format_d_i(format);
+			else if (format[i] == 'u')
+				len += ft_check_format_u(format);
+			else if (format[i] == 'x')
+				len += ft_check_format_ulo(format);
+			else if (format[i] == 'X')
+				len += ft_check_format_Xup(format);
+			else if (format[i] == '%')
+			{
+				len++;
+				ft_putchar('%');
+			}
+	}
+	return (len);
 }
