@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_c.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 10:20:47 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/11 10:20:47 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/12 19:38:03 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/12 19:38:03 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "printf.h"
 
-int ft_format(const char * format, ...)
+int	ft_putnbr(int n)
 {
-	va_list ap;
-	size_t len;
-	size_t i;
-
-	va_start(ap, format);
+	int	len;
 
 	len = 0;
-	i = 0;
-	if (format[i] == 'c')
+	if (n == INT_MIN)
 	{
-		len++;
-		ft_putchar(format[i]);
+		write(1, "-2147483648", 11);
+		return (len + 11);
+	}
+	if (n < 0)
+	{
+		len += ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+	{
+		len += ft_putnbr(n / 10);
+		len += ft_putnbr(n % 10);
+	}
+	else
+	{
+		len += ft_putchar(n + '0');
 	}
 	return (len);
 }
+// a voir si len a bien la bonne valeur si bug

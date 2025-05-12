@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_format_d_i.c                              :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 10:17:21 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/11 10:17:21 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/12 19:35:36 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/12 19:35:36 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_check_format_d_i(const char * format)
+int ft_putstr( const char *format)
 {
-	size_t len;
+	int	len;
 
 	len = 0;
-
+	while (format)
+	{
+		write(1,&format, 1);
+		len++;
+	}
 	return (len);
 }

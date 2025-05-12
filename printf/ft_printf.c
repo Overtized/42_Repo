@@ -12,37 +12,31 @@
 
 #include "libft.h"
 #include "printf.h"
-#include <stdarg.h>
 
-int ft_printf(const char * format, ...)
+int ft_printf(const char *format, ...)
 {
 	va_list ap;
 
-	va_start(ap, format);
+	int len;
 	int i;
-	size_t len;
-
+	
+	va_start(ap, *format);
 	i = 0;
 	len = 0;
-	while(format[i])
+	while(*format)
 	{
-		if(format[i] == '%')
+		if(*format == '%')
 		{
 			i++;
-			len += ft_check_format(format[i]);
-			ft_putconverted(format[i]);
+			len += ft_putconverted(*format);
 		}
 		else
-		{
-			ft_putchar(format[i]);
-			i++;
-			len ++;
-		}
+			len += ft_putchar(format[i++]);
 	}
 	va_end(ap);
 	return(len);
 }
-
-int main(void){
+int main(void)
+{
 	printf("%s\n salut %d\n bonjour", "hello", 2);
 }

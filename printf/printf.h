@@ -14,19 +14,13 @@
 #define PRINTF_H
 
 #include "libft.h"
-#include "stdarg.h"
+#include <stdarg.h>
+#include <limits.h>
 
 int ft_printf(const char *, ...);
-int ft_format(const char * format, ...);
-int ft_check_format(const char *format);
-int ft_check_format_d_i(const char * format);
-int ft_check_format_s(const char * format);
-int ft_check_format_ulo(const char * format);
-int ft_check_format_x(const char * format);
-int ft_check_format_Xup(const char * format);
-int ft_check_format_c(const char * format);
-int ft_check_format_p(const char * format);
-int ft_check_format_u(const char * format);
-void ft_putchar(char c);
+int ft_putchar(char c);
+int	ft_putnbr(int n);
+int ft_putstr( const char *format);
+int	ft_putnbr_base(int n, char *base);
 
 #endif

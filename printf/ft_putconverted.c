@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putconverted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchanlia <mchanlia@42.student.fr>          +#+  +:+       +#+        */
+/*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:02:22 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/12 15:09:24 by mchanlia         ###   ########.fr       */
+/*   Updated: 2025/05/12 20:18:15 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_putconverted(const char *format, ...)
 	size_t i;
 	
 	i = 0; 
-	if 
 }
