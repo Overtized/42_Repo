@@ -11,11 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "printf.h"
 
-int ft_check_format_c(const char * format)
+int ft_format(const char * format, ...)
 {
+	va_list ap;
 	size_t len;
 	size_t i;
+
+	va_start(ap, format);
 
 	len = 0;
 	i = 0;

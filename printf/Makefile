@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-HEADER = libft.h 
+HEADER = libft.h, printf.h
 
 SOURCES = 
 		

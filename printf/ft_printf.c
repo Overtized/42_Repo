@@ -30,14 +30,16 @@ int ft_printf(const char * format, ...)
 		{
 			i++;
 			len += ft_check_format(format[i]);
+			ft_putconverted(format[i]);
 		}
 		else
 		{
+			ft_putchar(format[i]);
 			i++;
 			len ++;
-			ft_putchar(format[i]);
 		}
 	}
+	va_end(ap);
 	return(len);
 }
 

@@ -17,6 +17,7 @@
 #include "stdarg.h"
 
 int ft_printf(const char *, ...);
+int ft_format(const char * format, ...);
 int ft_check_format(const char *format);
 int ft_check_format_d_i(const char * format);
 int ft_check_format_s(const char * format);
