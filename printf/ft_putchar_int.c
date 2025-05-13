@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ftputchar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/10 09:08:06 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/10 09:08:06 by mchanlia         ###   ########.fr       */
+/*   Created: 2025/05/11 13:41:02 by mchanlia          #+#    #+#             */
+/*   Updated: 2025/05/11 13:41:02 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-#define PRINTF_H
-
 #include "libft.h"
-#include <stdarg.h>
-#include <limits.h>
-#include <stdbool.h>
 
-int ft_printf(const char *, ...);
-int ft_putchar_int(char c);
-int	ft_putnbr(int n);
-int	ft_putnbr_u(unsigned int n);
-int	ft_putptr(void *ptr);
-int ft_putstr_int( const char *format);
-int	ft_putnbr_base(int n, char *base);
-int	ft_putnbr_base_up(int n, char *base);
-size_t	ft_strlen(const char *s);
-
-
-#endif
+int ft_putchar_int(char c)
+{
+	write(1, &c, 1);
+	return(1);
+}

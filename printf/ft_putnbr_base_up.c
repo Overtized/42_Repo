@@ -35,7 +35,7 @@ bool checkbase(char *base)
 	// check des bases a faire 
 }
 
-int	ft_putnbr_base(int n, char *base)
+int	ft_putnbr_base_up(int n, char *base)
 {
 	int	len;
 	int baselen;
@@ -58,7 +58,7 @@ int	ft_putnbr_base(int n, char *base)
 		len += ft_putnbr(n % baselen);
 	}
 	else
-		len += ft_putchar(n + '0');
+		len += ft_putchar(n + '0' - 32);
 	return (len);
 }
 // a voir si len a bien la bonne valeur si bug
