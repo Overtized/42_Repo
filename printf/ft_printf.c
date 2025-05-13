@@ -29,7 +29,6 @@ int ft_printf(const char *format, ...)
 		{
 			i++;
 			len += ft_putconverted(format[i], ap);
-			// putchar putstr putnbr putnbrbase 
 		}
 		else
 			len += ft_putchar(format[i++]);

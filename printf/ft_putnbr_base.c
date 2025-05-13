@@ -25,7 +25,7 @@ bool	checkhexbase(char *base)
 		return (false);
 	while(base[i])
 	{
-		if (base[i] >= '0' && base[i] <= '9' && base[i] >= 'A' && base[i] <= 'F')
+		if (base[i] >= '0' && base[i] <= '9' && base[i] >= 'a' && base[i] <= 'f')
 			i++;
 		else
 			return(false);
