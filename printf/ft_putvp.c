@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putptr(void *ptr, char *format)
+int	ft_putvp(void *ptr, char *base)
 {
 	int len;
 	long int ptrv;
@@ -18,7 +18,7 @@ int	ft_putptr(void *ptr, char *format)
 	ptrv = (long int)ptr;
 	len = 0;
 	len += write(1,"0x", 2);
-	len += ft_putnbr_base_ulong(ptrv, format);
+	len += ft_putnbr_base_ulong(ptrv, base);
 	// recuperer pointeur , le caster en unsigned long?, ecrire ox et faire un putnbr base ulong en  hexa 
 	return (len);
 }
