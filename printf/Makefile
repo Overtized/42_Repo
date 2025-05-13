@@ -1,8 +1,8 @@
 NAME = libftprintf.a
 
-HEADER = printf.h
+HEADER = ft_printf.h
 
-SOURCES =	ft_ptrintf.c \
+SOURCES =	ft_printf.c \
 			ft_putchar_int.c \
 			ft_putconverted.c \
 			ft_putnbr_base_ulong.c \

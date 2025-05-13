@@ -6,12 +6,12 @@
 /*   By: mchanlia <mchanlia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:02:22 by mchanlia          #+#    #+#             */
-/*   Updated: 2025/05/13 17:34:35 by mchanlia         ###   ########.fr       */
+/*   Updated: 2025/05/13 18:45:50 by mchanlia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putconverted(const char *format, va_list ap, ...)
 {
