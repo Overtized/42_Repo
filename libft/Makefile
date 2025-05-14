@@ -43,7 +43,7 @@ ObjectsBonus = $(SourcesBonus:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g3 -Wall -Wextra -Werror
 
 AR = ar rcs
 
