@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*fillstring(long nbr, char *string, size_t digitscount)
+static char	*fillstring(long nbr, char *string, size_t digitscount)
 {
 	string[digitscount] = '\0';
 	while (nbr > 0)
@@ -23,7 +23,7 @@ char	*fillstring(long nbr, char *string, size_t digitscount)
 	return (string);
 }
 
-int	dcount(int n)
+static int	dcount(int n)
 {
 	size_t	nbdigits;
 	long	digits;
@@ -67,9 +67,3 @@ char	*ft_itoa(int n)
 		string[0] = '-';
 	return (string);
 }
-// int main(void)
-// {	
-// 	// printf("%d \n", dcount(200));
-// 	printf("%s \n", ft_itoa(INT_MIN));
-// 	return 0;
-// }

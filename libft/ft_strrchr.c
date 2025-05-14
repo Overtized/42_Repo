@@ -39,9 +39,3 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	return ((char *)&s[cursor]);
 }
-// int main(void)
-// {
-// 	char *s = "salut lol";
-// 	char c = '\0';
-// 	printf("%s", ft_strrchr(s,c));
-// }

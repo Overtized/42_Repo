@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_countword(char const *s, char c)
+static size_t	ft_countword(char const *s, char c)
 {
 	size_t	count;
 	int		in_word;
@@ -33,7 +33,7 @@ size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
+static int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
 {
 	size_t	i;
 
@@ -52,7 +52,7 @@ int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
 	return (0);
 }
 
-size_t	checklen(char const **s, char c)
+static size_t	checklen(char const **s, char c)
 {
 	size_t	len;
 
@@ -67,7 +67,7 @@ size_t	checklen(char const **s, char c)
 	return (len);
 }
 
-int	tabfill(char **tabs, char const *s, char c)
+static int	tabfill(char **tabs, char const *s, char c)
 {
 	size_t	len;
 	size_t	i;
