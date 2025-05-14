@@ -10,23 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 bool	checkbase(char *base)
 {
-	size_t	len;
+	size_t	baselen;
 	size_t	i;
 
 	i = 0;
-	len = ft_strlen(base);
-	if (len != 10)
+	baselen = ft_strlen(base);
+	if (baselen < 1 || !base)
 		return (false);
-	while(base[i])
+	if (ft_strchr(base, '+') || ft_strchr(base, '-'))
+		return(false);
+	while(i < baselen - 1)
 	{
-		if (base[i] >= '0' && base[i] <= '9')
-			i++;
-		else
+		if (ft_strchr(&base[i + 1],base[i]))
 			return(false);
+		i++;
 	}
 	return (true);
 }
@@ -42,8 +43,8 @@ int	ft_putnbr_ulong(unsigned long n, char *base)
 	{
 		if (n > 9)
 		{
-			len += ft_putnbr(n / baselen);
-			len += ft_putnbr(n % baselen);
+			len += ft_putnbr(n / baselen, base);
+			len += ft_putnbr(n % baselen, base);
 		}
 		else
 			len += ft_putchar(n + '0');

@@ -112,3 +112,18 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (tabs);
 }
+// int main(void)
+// {
+// 	int i;
+// 	char *s = "salut je m'apelle max";
+// 	char delimit = '\0';
+// 	char **split = ft_split(s, delimit);
+
+// 	i = 0;
+// 	 while (split[i])
+// 	 {
+// 		 printf("string %d, vaut %s \n", i, split[i]);
+// 		i++;
+// 	 }
+// 	return 0;
+// }

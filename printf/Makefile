@@ -1,9 +1,18 @@
 NAME = libftprintf.a
 
-HEADER = libft.h, printf.h
+HEADER = ft_printf.h
 
-SOURCES = 
-		
+SOURCES =	ft_printf.c \
+			ft_putchar_int.c \
+			ft_putconverted.c \
+			ft_putnbr_base_ulong.c \
+			ft_putnbr_base.c \
+			ft_putnbr_unsigned.c \
+			ft_putnbr.c \
+			ft_putstr_int.c \
+			ft_putvp.c \
+			ft_strlen.c \
+
 Objects = $(SOURCES:.c=.o)
 
 ObjectsBonus = $(SourcesBonus:.c=.o)
@@ -16,7 +25,7 @@ AR = ar rcs
 
 RM = rm -f
 
-SourcesBonus =	
+SourcesBonus =
 
 all: $(NAME)
 
