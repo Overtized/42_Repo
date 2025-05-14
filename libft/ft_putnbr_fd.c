@@ -14,8 +14,6 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (!n || !fd)
-		return ;
 	if (n == INT_MIN)
 	{
 		write(fd, "-2147483648", 11);
