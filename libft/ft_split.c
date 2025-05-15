@@ -33,7 +33,7 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-static int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
+static int	ft_safemalloc(char **tabs, size_t strinpos, size_t buffer)
 {
 	size_t	i;
 
@@ -52,7 +52,7 @@ static int	safemalloc(char **tabs, size_t strinpos, size_t buffer)
 	return (0);
 }
 
-static size_t	checklen(char const **s, char c)
+static size_t	ft_checklen(char const **s, char c)
 {
 	size_t	len;
 
@@ -67,7 +67,7 @@ static size_t	checklen(char const **s, char c)
 	return (len);
 }
 
-static int	tabfill(char **tabs, char const *s, char c)
+static int	ft_tabfill(char **tabs, char const *s, char c)
 {
 	size_t	len;
 	size_t	i;
@@ -75,10 +75,10 @@ static int	tabfill(char **tabs, char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		len = checklen(&s, c);
+		len = ft_checklen(&s, c);
 		if (len > 0)
 		{
-			if (safemalloc(tabs, i, len + 1))
+			if (ft_safemalloc(tabs, i, len + 1))
 				return (1);
 			ft_strlcpy(tabs[i], s - len, len + 1);
 			i++;
@@ -108,7 +108,7 @@ char	**ft_split(char const *s, char c)
 	tabs = ft_calloc(token + 1, sizeof(char *));
 	if (!tabs)
 		return (NULL);
-	if (tabfill(tabs, s, c))
+	if (ft_tabfill(tabs, s, c))
 		return (NULL);
 	return (tabs);
 }
