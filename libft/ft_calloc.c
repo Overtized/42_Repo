@@ -18,9 +18,17 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
+	if ( nmemb * size > __SIZE_MAX__)
+		return (NULL);
 	allocated_mem = malloc(nmemb * size);
 	if (!(allocated_mem))
 		return (NULL);
 	ft_bzero(allocated_mem, (nmemb * size));
 	return (allocated_mem);
 }
+
+// int main(void)
+// {
+// 	calloc(10000000000, 123456789123456789);
+// 	ft_calloc(10000000000, 123456789123456789);
+// }
